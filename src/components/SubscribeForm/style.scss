@@ -1,0 +1,157 @@
+@import "../../root";
+
+// ANIMATION
+
+.success-enter {
+  opacity: 0;
+}
+
+.success-enter-active {
+  transition: opacity 0.5s ease-in;
+}
+
+// STYLES
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  z-index: 5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 16px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #d6d6d6;
+
+  @media (min-width: $media-sm-resolution) {
+    padding: 32px;
+    font-size: 20px;
+  }
+
+  &__icon {
+    margin-bottom: 14px;
+    width: 40px;
+    height: 40px;
+    background-image: url("../../assets/img/done.svg");
+    background-size: 40px;
+
+    @media (min-width: $media-sm-resolution) {
+      margin-bottom: 25px;
+      width: 62px;
+      height: 62px;
+      background-size: 62px;
+    }
+  }
+}
+
+.submit-button {
+  &_sending {
+    background-image: url("../../assets/img/sending.svg");
+  }
+
+  &_success {
+    background-image: url("../../assets/img/success.svg");
+  }
+}
+
+.subscribe-section {
+  @extend .container;
+  @extend .section-margin;
+
+  &__heading {
+    @extend .section-heading;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+
+    @media (min-width: $media-xs-resolution) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $media-sm-resolution) {
+      margin-bottom: 28px;
+      font-size: 20px;
+    }
+
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #14a5da;
+    padding: 30px 36px 0 36px;
+
+    @media (min-width: $media-xs-resolution) {
+      padding: 42px 36px 0 36px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: 6px;
+      left: 6px;
+      background-size: 14px;
+      background-image: url('../../assets/img/RSS.svg');
+      background-repeat: no-repeat;
+
+      @media (min-width: $media-sm-resolution) {
+        width: 21px;
+        height: 21px;
+        top: 14px;
+        left: 15px;
+        background-size: 21px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      border: 24px solid transparent;
+      border-left: 24px solid #e3f4fb;
+      border-top: 24px solid #e3f4fb;
+
+      @media (min-width: $media-sm-resolution) {
+        border: 44px solid transparent;
+        border-left: 44px solid #e3f4fb;
+        border-top: 44px solid #e3f4fb;
+      }
+    }
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 470px;
+  justify-content: space-between;
+
+
+  @media (min-width: $media-xs-resolution) {
+    max-width: 500px;
+  }
+
+  @media (min-width: $media-sm-resolution) {
+    max-width: 570px;
+  }
+
+}

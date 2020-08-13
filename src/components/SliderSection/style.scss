@@ -1,0 +1,339 @@
+@import "../../root";
+
+.slider-section {
+  position: relative;
+
+  .owl-carousel {
+    overflow: hidden;
+
+    .owl-dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6px;
+
+      @media (min-width: $media-xs-resolution) {
+        bottom: 32px;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        bottom: 45px;
+      }
+
+      .owl-dot {
+        padding: 30px 0 20px !important;
+        margin: -30px 12px -20px 0;
+
+        @media (min-width: $media-xs-resolution) {
+          margin-right: 22px;
+        }
+
+        @media (min-width: $media-sm-resolution) {
+          padding: 45px 0 !important;
+          margin: -45px 30px -45px 0;
+        }
+
+        span {
+          transition: $transition-regular;
+          position: relative;
+          top: 0;
+          width: 30px;
+          height: 2px;
+          border-radius: 0;
+          margin: 0;
+          padding: 0;
+
+          @media (min-width: $media-xs-resolution) {
+            width: 60px;
+          }
+          @media (min-width: $media-sm-resolution) {
+            width: 70px;
+          }
+
+        }
+
+        &:hover span {
+          top: -6px;
+          background-color: #14a5da;
+          opacity: 0.8;
+        }
+
+        &:focus span,
+        &.active span {
+          background-color: #14a5da;
+          opacity: 1 !important;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+      }
+
+    }
+
+    .owl-nav {
+
+      @extend .container;
+
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 100;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+
+      @media (min-width: $media-xs-resolution) {
+        bottom: 36px;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        bottom: 50px;
+      }
+
+      div {
+        position: relative;
+        width: 17px;
+        height: 12px;
+        padding: 24px;
+        margin: -24px;
+        border: 0;
+        outline: 0;
+        font-size: 0;
+        cursor: pointer;
+        background-color: transparent;
+        background-image: url('../../assets/img/left-arrow.svg') !important;
+        background-size: 17px 12px;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: $transition-fast;
+
+        @media (min-width: $media-xs-resolution) {
+          padding: 32px;
+          margin: -32px;
+          width: 31px;
+          height: 22px;
+          background-size: 31px 22px;
+        }
+
+        &:hover,
+        &:focus {
+          width: 17px;
+          height: 12px;
+          padding: 24px;
+          margin: -24px;
+          background-size: 17px 12px;
+          background-position: 25px center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          transition: $transition-fast;
+
+
+          @media (min-width: $media-xs-resolution) {
+            padding: 32px;
+            margin: -32px;
+            width: 31px;
+            height: 22px;
+            background-size: 31px 22px;
+            background-position: 40px center;
+          }
+        }
+
+        &:active {
+          background-position: 30px center;
+          background-repeat: no-repeat;
+          @media (min-width: $media-xs-resolution) {
+            background-position: 50px center;
+          }
+        }
+      }
+
+      .owl-prev {
+        transform: scale(-1, 1);
+      }
+    }
+
+  }
+
+  .slider-item {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 240px;
+
+    @media (min-width: $media-xs-resolution) {
+      height: 400px;
+    }
+
+    @media (min-width: $media-md-resolution) {
+      height: 600px;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      padding-top: 27px;
+
+      @media (min-width: $media-xs-resolution) {
+        max-width: 600px;
+        padding-top: 72px;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        max-width: 768px;
+        padding-top: 116px;
+      }
+
+    }
+
+    &__tag {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 9px;
+      color: #ffffff;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      background-color: #14a5da;
+      margin: 0 6px 16px 0;
+
+      @media (min-width: $media-xs-resolution) {
+        margin: 0 12px 24px 0;
+        padding: 6px 14px;
+        font-size: 12px;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        margin: 0 12px 36px 0;
+        padding: 6px 14px;
+        font-size: 14px;
+      }
+
+    }
+
+    &__heading {
+      font-size: 16px;
+      letter-spacing: 0.3px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+
+      @media (min-width: $media-xs-resolution) {
+        font-size: 28px;
+        margin: 0 0 10px 0;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        font-size: 46px;
+        margin: 0 0 19px 0;
+      }
+
+    }
+
+    &__description {
+      font-size: 14px;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.3;
+      margin: 0;
+
+      @media (min-width: $media-xs-resolution) {
+        font-size: 18px;
+      }
+
+      @media (min-width: $media-md-resolution) {
+        font-size: 24px;
+      }
+
+    }
+  }
+
+  .slider-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    overflow: hidden;
+
+    @media (min-width: $media-xs-resolution) {
+      bottom: 30px;
+    }
+
+    @media (min-width: $media-md-resolution) {
+      bottom: 50px;
+    }
+
+  }
+
+  .slider-nav__control {
+    position: relative;
+    width: 17px;
+    height: 12px;
+
+    padding: 24px;
+    margin: -24px 0;
+    border: 0;
+    outline: 0;
+    font-size: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('../../assets/img/left-arrow.svg');
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.15s ease-in-out;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      background-position: 20px center;
+      transition: 0.15s ease-in-out;
+
+      @media (min-width: $media-xs-resolution) {
+        background-position: 25px center;
+      }
+
+    }
+
+    &:active {
+      background-position: 25px center;
+
+      @media (min-width: $media-xs-resolution) {
+        background-position: 30px center;
+      }
+
+    }
+
+    @media (min-width: $media-xs-resolution) {
+      padding: 28px;
+      margin: -28px 0;
+      width: 28px;
+      height: 18px;
+      background-size: 28px;
+    }
+
+    @media (min-width: $media-md-resolution) {
+      padding: 32px;
+      margin: -32px 0;
+      width: 32px;
+      height: 22px;
+      background-size: 32px;
+    }
+
+
+    &_back {
+      transform: scale(-1, 1);
+      right: 16px;
+    }
+
+    &_next {
+      left: 16px;
+    }
+
+  }
+}
